@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度百科_全球最大中文百科全书</title>
+    <meta name="keywords" content="百度百科,百科手机版,中文百科">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0,user-scalable=no">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .topbar {
+            background: #459df5;
+            height: 41px;
+            line-height: 41px;
+            padding: 0 15px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .topbar img {
+            height: 100%;
+        }
+        .top-place {
+            height: 41px;
+        }
+        .content {
+            width: 180px;
+            text-align: center;
+            color: #888888;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -90px;
+            margin-top: -155px;
+        }
+        .airship {
+            width: 45px;
+            float: left;
+            margin-left: 33px;
+        }
+        .four-zero-four {
+            width: 152px;
+            margin: 10px 0 20px 0;
+        }
+        .line {
+            width: 100%;
+            border-top: 1px solid #dedede;
+            margin-bottom: 20px;
+        }
+        .error-txt {
+            font-size: 15px;
+            color: #666666;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .jump-txt {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        .go-home {
+            padding: 6px 9px;
+            border: 1px solid #d5d5d5;
+            border-radius: 2px;
+            color: #888888;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        .bottom-baike-logo {
+            width: 65px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <a href="/?bk_from=waperror"><img src="//baike.bdimg.com/cms/static/wap/top-baike-logo.jpg" alt="百科logo"></a>
+    </div>
+    <div class="top-place"></div>
+    <div class="content">
+        <img class="airship" src="//baike.bdimg.com/cms/static/wap/error/airship.png" alt="这是个飞船">
+        <img src="//baike.bdimg.com/cms/static/wap/error/404.png" alt="404" class="four-zero-four">
+        <div class="line"></div>
+        <p class="error-txt">该页面已蒸发</p>
+        <p class="jump-txt"><span class="time" id="J-time">5</span>秒后带你去下个星球</p>
+        <a href="/?bk_from=waperror" class="go-home">返回百科首页</a><br>
+        <img src="//baike.bdimg.com/cms/static/wap/baike-logo-colorful.png" alt="百科logo" class="bottom-baike-logo">
+    </div>
+    <script type="text/javascript">
+    window.onload = function () {
+        var obj = document.getElementById('J-time');
+        var time = obj.innerHTML;
+        setInterval(function () {
+            time--;
+            obj.innerHTML = time;
+            if (time === 0) {
+                window.location.href = '/?bk_from=waperror';
+            }
+        }, 1000);
+    };
+    </script>
+</body>
+</html>
+
+<!-- https://wapbaike.baidu.com/error.html -->
